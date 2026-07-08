@@ -1,0 +1,13 @@
+[package]
+name = "config"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+nexosim = { version = "1.0.0", features = ["server"] }
+schematic = { version = "0.18", features = [
+    "schema",
+    "renderer_template",
+    "toml",
+] }
+serde = "1.0.228"
