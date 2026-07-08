@@ -1,0 +1,7 @@
+attrs>=26.1.0
+cattrs>=26.1.0
+cbor2>=6.1.2
+grpcio>=1.81.1
+NeXosim-py>=0.2.0
+protobuf>=5.29.6
+typing_extensions>=4.15.0

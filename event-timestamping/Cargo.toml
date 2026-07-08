@@ -1,0 +1,8 @@
+[package]
+name = "event-timestamping"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+nexosim = { version = "1.0.0", features = ["server"] }
+serde = "1.0.228"
