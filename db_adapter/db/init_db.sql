@@ -1,0 +1,7 @@
+CREATE DATABASE nexosim;
+CREATE USER nexosim WITH PASSWORD '123';
+
+ALTER DATABASE nexosim OWNER TO nexosim;
+\c nexosim
+
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public to nexosim;

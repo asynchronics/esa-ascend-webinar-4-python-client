@@ -1,0 +1,10 @@
+[package]
+name = "db_adapter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+nexosim = { version = "1.0.0", features = ["server", "tracing"] }
+postgres = "0.19.14"
+serde = "1.0.228"
+tracing = "0.1.44"

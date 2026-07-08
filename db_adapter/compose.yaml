@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:18.3
+    command: ["postgres", "-c", "log_statement=all"]
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_USER=postgres
+    healthcheck:
+      test: ["CMD", "pg_isready", "--host=localhost", "--username=postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_interval: 5s
+      start_period: 30s
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql
+      - ./db/init_db.sql:/docker-entrypoint-initdb.d/00-init.sql
+      - ./db/create_tables.sql:/docker-entrypoint-initdb.d/10-create_tables.sql
+
+volumes:
+  db_data:
+    driver: local
